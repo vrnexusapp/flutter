@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+
 import '../../data/models/product_model.dart';
 
 class ProductDetailsPage extends StatelessWidget {
@@ -15,10 +16,7 @@ class ProductDetailsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(product.title),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.favorite_border),
-            onPressed: () {},
-          )
+          IconButton(icon: const Icon(Icons.favorite_border), onPressed: () {}),
         ],
       ),
       body: SingleChildScrollView(
@@ -32,10 +30,8 @@ class ProductDetailsPage extends StatelessWidget {
                 width: double.infinity,
                 height: 300,
                 fit: BoxFit.cover,
-                placeholder: (context, url) => Container(
-                  height: 300,
-                  color: Colors.grey.withOpacity(0.2),
-                ),
+                placeholder: (context, url) =>
+                    Container(height: 300, color: Colors.grey.withOpacity(0.2)),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
@@ -106,7 +102,7 @@ class ProductDetailsPage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 16),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

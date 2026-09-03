@@ -19,11 +19,11 @@ class _MediaPageState extends State<MediaPage> {
       _isLoading = false;
       _selectedFile = 'mock_${type}_file.png';
     });
-    
+
     if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Selected $type: $_selectedFile')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Selected $type: $_selectedFile')));
     }
   }
 
@@ -49,7 +49,11 @@ class _MediaPageState extends State<MediaPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(Icons.insert_drive_file, size: 64, color: Colors.blue),
+                      const Icon(
+                        Icons.insert_drive_file,
+                        size: 64,
+                        color: Colors.blue,
+                      ),
                       const SizedBox(height: 16),
                       Text('Selected: $_selectedFile'),
                     ],

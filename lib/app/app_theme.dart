@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../core/theme/colors.dart';
 import '../core/theme/typography.dart';
 
@@ -43,7 +44,9 @@ class AppTheme {
           elevation: 4,
           shadowColor: AppColors.primary.withValues(alpha: 0.3),
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
         ),
       ),
     );
@@ -79,7 +82,10 @@ class AppTheme {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
-          side: BorderSide(color: Colors.white.withValues(alpha: 0.2), width: 1), // Glass rim
+          side: BorderSide(
+            color: Colors.white.withValues(alpha: 0.2),
+            width: 1,
+          ), // Glass rim
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -89,7 +95,9 @@ class AppTheme {
           elevation: 8,
           shadowColor: AppColors.primary.withValues(alpha: 0.3), // Soft glow
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
         ),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../../../../core/network/dio_client.dart';
 import '../models/product_model.dart';
 
@@ -11,17 +12,21 @@ class ProductsRepository {
 
   ProductsRepository(this._dio);
 
-  Future<ProductResponse> getProducts({int limit = 20, int skip = 0, String? search}) async {
+  Future<ProductResponse> getProducts({
+    int limit = 20,
+    int skip = 0,
+    String? search,
+  }) async {
     try {
-      final String endpoint = search != null && search.isNotEmpty 
-          ? '/products/search' 
+      final String endpoint = search != null && search.isNotEmpty
+          ? '/products/search'
           : '/products';
-          
+
       final Map<String, dynamic> queryParameters = {
         'limit': limit,
         'skip': skip,
       };
-      
+
       if (search != null && search.isNotEmpty) {
         queryParameters['q'] = search;
       }

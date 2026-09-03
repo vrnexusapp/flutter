@@ -8,7 +8,7 @@ class AppColors {
   static const Color primaryVariant = Color(0xFF3700B3);
   static const Color secondary = Color(0xFF03DAC6);
   static const Color secondaryVariant = Color(0xFF018786);
-  
+
   // Status Colors
   static const Color success = Color(0xFF4CAF50);
   static const Color error = Color(0xFFB00020);

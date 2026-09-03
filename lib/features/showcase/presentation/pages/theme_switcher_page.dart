@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../controllers/theme_provider.dart';
 
 class ThemeSwitcherPage extends ConsumerWidget {
@@ -10,9 +11,7 @@ class ThemeSwitcherPage extends ConsumerWidget {
     final themeMode = ref.watch(themeProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Theme Switching'),
-      ),
+      appBar: AppBar(title: const Text('Theme Switching')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

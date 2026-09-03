@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../features/showcase/presentation/pages/showcase_home_page.dart';
 import '../features/showcase/presentation/pages/theme_switcher_page.dart';
 import '../features/products/presentation/pages/products_page.dart';
@@ -79,9 +80,7 @@ GoRouter appRouter(Ref ref) {
       // Add feature routes here as we build them...
     ],
     errorBuilder: (context, state) => Scaffold(
-      body: Center(
-        child: Text('Route not found: ${state.uri.toString()}'),
-      ),
+      body: Center(child: Text('Route not found: ${state.uri.toString()}')),
     ),
   );
 }

@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../../data/models/product_model.dart';
 import '../../data/repositories/products_repository_impl.dart';
 
@@ -46,10 +47,17 @@ class ProductsNotifier extends _$ProductsNotifier {
     return _fetchProducts(skip: 0, searchQuery: '');
   }
 
-  Future<ProductsState> _fetchProducts({required int skip, required String searchQuery}) async {
+  Future<ProductsState> _fetchProducts({
+    required int skip,
+    required String searchQuery,
+  }) async {
     final repository = ref.read(productsRepositoryProvider);
-    final response = await repository.getProducts(limit: _limit, skip: skip, search: searchQuery);
-    
+    final response = await repository.getProducts(
+      limit: _limit,
+      skip: skip,
+      search: searchQuery,
+    );
+
     return ProductsState(
       products: response.products,
       hasMore: response.skip + response.limit < response.total,
@@ -61,15 +69,18 @@ class ProductsNotifier extends _$ProductsNotifier {
   Future<void> loadMore() async {
     if (state.isLoading || state.hasError) return;
     final currentState = state.value;
-    if (currentState == null || !currentState.hasMore || currentState.isLoadingMore) return;
+    if (currentState == null ||
+        !currentState.hasMore ||
+        currentState.isLoadingMore)
+      return;
 
     state = AsyncValue.data(currentState.copyWith(isLoadingMore: true));
     try {
       final repository = ref.read(productsRepositoryProvider);
       final newSkip = currentState.skip + _limit;
       final response = await repository.getProducts(
-        limit: _limit, 
-        skip: newSkip, 
+        limit: _limit,
+        skip: newSkip,
         search: currentState.searchQuery,
       );
 

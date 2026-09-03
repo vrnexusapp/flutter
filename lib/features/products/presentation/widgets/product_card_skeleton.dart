@@ -7,10 +7,10 @@ class ProductCardSkeleton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    
+
     // Use darker skeleton colors for dark mode to match the sleek aesthetic
     final baseColor = isDark ? Colors.grey[850]! : Colors.grey[300]!;
-    
+
     return Card(
       clipBehavior: Clip.antiAlias,
       child: Column(
@@ -18,10 +18,7 @@ class ProductCardSkeleton extends StatelessWidget {
         children: [
           Expanded(
             flex: 3,
-            child: Container(
-              width: double.infinity,
-              color: baseColor,
-            ),
+            child: Container(width: double.infinity, color: baseColor),
           ),
           Expanded(
             flex: 4,
@@ -77,7 +74,7 @@ class ProductCardSkeleton extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),

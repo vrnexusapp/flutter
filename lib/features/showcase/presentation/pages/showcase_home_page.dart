@@ -93,7 +93,7 @@ class ShowcaseHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter UI Showcase'),
@@ -103,7 +103,7 @@ class ShowcaseHomePage extends StatelessWidget {
             onPressed: () {
               // Show info dialog
             },
-          )
+          ),
         ],
       ),
       body: SafeArea(
@@ -138,16 +138,28 @@ class ShowcaseHomePage extends StatelessWidget {
                               color: theme.colorScheme.primary.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            child: Icon(item.icon, color: theme.colorScheme.primary),
+                            child: Icon(
+                              item.icon,
+                              color: theme.colorScheme.primary,
+                            ),
                           ),
                           const SizedBox(width: 16),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(item.title, style: theme.textTheme.titleMedium),
+                                Text(
+                                  item.title,
+                                  style: theme.textTheme.titleMedium,
+                                ),
                                 const SizedBox(height: 4),
-                                Text(item.description, style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurface.withOpacity(0.7))),
+                                Text(
+                                  item.description,
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                    color: theme.colorScheme.onSurface
+                                        .withOpacity(0.7),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -156,12 +168,20 @@ class ShowcaseHomePage extends StatelessWidget {
                       const SizedBox(height: 16),
                       Row(
                         children: [
-                          _buildChip(context, item.difficulty, isDifficulty: true),
+                          _buildChip(
+                            context,
+                            item.difficulty,
+                            isDifficulty: true,
+                          ),
                           const SizedBox(width: 8),
-                          ...item.tags.take(2).map((tag) => Padding(
-                                padding: const EdgeInsets.only(right: 8),
-                                child: _buildChip(context, tag),
-                              )),
+                          ...item.tags
+                              .take(2)
+                              .map(
+                                (tag) => Padding(
+                                  padding: const EdgeInsets.only(right: 8),
+                                  child: _buildChip(context, tag),
+                                ),
+                              ),
                         ],
                       ),
                     ],
@@ -175,10 +195,16 @@ class ShowcaseHomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildChip(BuildContext context, String label, {bool isDifficulty = false}) {
+  Widget _buildChip(
+    BuildContext context,
+    String label, {
+    bool isDifficulty = false,
+  }) {
     final theme = Theme.of(context);
-    final color = isDifficulty ? _getDifficultyColor(label) : theme.colorScheme.secondary;
-    
+    final color = isDifficulty
+        ? _getDifficultyColor(label)
+        : theme.colorScheme.secondary;
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
@@ -188,7 +214,10 @@ class ShowcaseHomePage extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: theme.textTheme.labelSmall?.copyWith(color: color, fontWeight: FontWeight.bold),
+        style: theme.textTheme.labelSmall?.copyWith(
+          color: color,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'dart:math' as math;
 
 class AnimatedGlassBackground extends StatefulWidget {
@@ -7,7 +8,8 @@ class AnimatedGlassBackground extends StatefulWidget {
   const AnimatedGlassBackground({super.key, required this.child});
 
   @override
-  State<AnimatedGlassBackground> createState() => _AnimatedGlassBackgroundState();
+  State<AnimatedGlassBackground> createState() =>
+      _AnimatedGlassBackgroundState();
 }
 
 class _AnimatedGlassBackgroundState extends State<AnimatedGlassBackground>
@@ -48,7 +50,7 @@ class _AnimatedGlassBackgroundState extends State<AnimatedGlassBackground>
             ),
           ),
         ),
-        
+
         // Animated Orbs
         AnimatedBuilder(
           animation: _controller,
@@ -57,14 +59,19 @@ class _AnimatedGlassBackgroundState extends State<AnimatedGlassBackground>
               children: [
                 // Soft Lavender/Purple Orb
                 Positioned(
-                  top: size.height * 0.15 + math.sin(_controller.value * 2 * math.pi) * 80,
-                  left: size.width * 0.1 + math.cos(_controller.value * 2 * math.pi) * 60,
+                  top:
+                      size.height * 0.15 +
+                      math.sin(_controller.value * 2 * math.pi) * 80,
+                  left:
+                      size.width * 0.1 +
+                      math.cos(_controller.value * 2 * math.pi) * 60,
                   child: Container(
                     width: 300,
                     height: 300,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: const Color(0xFFD4C4FB).withValues(alpha: 0.6), // Soft lavender
+                      color: const Color(0xFFD4C4FB)
+                          .withValues(alpha: 0.6), // Soft lavender
                       boxShadow: [
                         BoxShadow(
                           color: const Color(0xFFD4C4FB).withValues(alpha: 0.6),
@@ -77,14 +84,19 @@ class _AnimatedGlassBackgroundState extends State<AnimatedGlassBackground>
                 ),
                 // Soft Peach/Yellow Orb
                 Positioned(
-                  bottom: size.height * 0.15 + math.cos(_controller.value * 2 * math.pi) * 80,
-                  right: size.width * 0.1 + math.sin(_controller.value * 2 * math.pi) * 60,
+                  bottom:
+                      size.height * 0.15 +
+                      math.cos(_controller.value * 2 * math.pi) * 80,
+                  right:
+                      size.width * 0.1 +
+                      math.sin(_controller.value * 2 * math.pi) * 60,
                   child: Container(
                     width: 350,
                     height: 350,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: const Color(0xFFFFDAB9).withValues(alpha: 0.6), // Soft peach
+                      color: const Color(0xFFFFDAB9)
+                          .withValues(alpha: 0.6), // Soft peach
                       boxShadow: [
                         BoxShadow(
                           color: const Color(0xFFFFDAB9).withValues(alpha: 0.6),
@@ -97,14 +109,19 @@ class _AnimatedGlassBackgroundState extends State<AnimatedGlassBackground>
                 ),
                 // Salmon/Pink Orb
                 Positioned(
-                  top: size.height * 0.4 + math.cos(_controller.value * 2 * math.pi + math.pi) * 100,
-                  left: size.width * 0.3 + math.sin(_controller.value * 2 * math.pi + math.pi) * 100,
+                  top:
+                      size.height * 0.4 +
+                      math.cos(_controller.value * 2 * math.pi + math.pi) * 100,
+                  left:
+                      size.width * 0.3 +
+                      math.sin(_controller.value * 2 * math.pi + math.pi) * 100,
                   child: Container(
                     width: 400,
                     height: 400,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: const Color(0xFFFF9A9E).withValues(alpha: 0.5), // Salmon pink
+                      color: const Color(0xFFFF9A9E)
+                          .withValues(alpha: 0.5), // Salmon pink
                       boxShadow: [
                         BoxShadow(
                           color: const Color(0xFFFF9A9E).withValues(alpha: 0.5),

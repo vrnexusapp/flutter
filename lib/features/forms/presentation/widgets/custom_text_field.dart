@@ -27,9 +27,8 @@ class CustomTextField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.titleSmall?.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
+          style: Theme.of(context).textTheme.titleSmall
+              ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
         TextFormField(
@@ -40,11 +39,12 @@ class CustomTextField extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hint,
             prefixIcon: prefixIcon,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
             filled: true,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 16,
+            ),
           ),
         ),
       ],

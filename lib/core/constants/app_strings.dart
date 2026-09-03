@@ -9,11 +9,12 @@ class AppStrings {
   static const String success = 'Success';
   static const String error = 'Error';
   static const String retry = 'Retry';
-  
+
   // Showcase Home
   static const String showcaseTitle = 'Flutter UI Showcase';
-  static const String showcaseSubtitle = 'A collection of professional Flutter UI components and patterns';
-  
+  static const String showcaseSubtitle =
+      'A collection of professional Flutter UI components and patterns';
+
   // Dashboard
   static const String dashboardTitle = 'Responsive Dashboard';
   static const String totalSales = 'Total Sales';
@@ -38,7 +39,7 @@ class AppStrings {
 
   // Dialogs
   static const String dialogsTitle = 'Dialogs & Bottom Sheets';
-  
+
   // Media
   static const String mediaTitle = 'File & Image Selection';
 }

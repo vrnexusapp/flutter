@@ -32,13 +32,17 @@ class _AnimationsPageState extends State<AnimationsPage> {
                 width: double.infinity,
                 height: _expanded ? 200 : 100,
                 decoration: BoxDecoration(
-                  color: _expanded ? theme.colorScheme.primary : theme.colorScheme.secondary,
+                  color: _expanded
+                      ? theme.colorScheme.primary
+                      : theme.colorScheme.secondary,
                   borderRadius: BorderRadius.circular(_expanded ? 24 : 12),
                 ),
                 alignment: Alignment.center,
                 child: Text(
                   _expanded ? 'Expanded' : 'Tap to Expand',
-                  style: theme.textTheme.titleMedium?.copyWith(color: Colors.white),
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -55,8 +59,11 @@ class _AnimationsPageState extends State<AnimationsPage> {
                   key: ValueKey<bool>(_isFavourited),
                   iconSize: 64,
                   color: _isFavourited ? Colors.red : Colors.grey,
-                  icon: Icon(_isFavourited ? Icons.favorite : Icons.favorite_border),
-                  onPressed: () => setState(() => _isFavourited = !_isFavourited),
+                  icon: Icon(
+                    _isFavourited ? Icons.favorite : Icons.favorite_border,
+                  ),
+                  onPressed: () =>
+                      setState(() => _isFavourited = !_isFavourited),
                 ),
               ),
             ),

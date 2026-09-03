@@ -19,7 +19,8 @@ abstract class Product with _$Product {
     required List<String> images,
   }) = _Product;
 
-  factory Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
+  factory Product.fromJson(Map<String, dynamic> json) =>
+      _$ProductFromJson(json);
 }
 
 @freezed
@@ -31,5 +32,6 @@ abstract class ProductResponse with _$ProductResponse {
     required int limit,
   }) = _ProductResponse;
 
-  factory ProductResponse.fromJson(Map<String, dynamic> json) => _$ProductResponseFromJson(json);
+  factory ProductResponse.fromJson(Map<String, dynamic> json) =>
+      _$ProductResponseFromJson(json);
 }

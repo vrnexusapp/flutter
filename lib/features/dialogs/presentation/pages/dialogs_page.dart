@@ -34,7 +34,9 @@ class DialogsPage extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Confirm Action'),
-        content: const Text('Are you sure you want to proceed with this action?'),
+        content: const Text(
+          'Are you sure you want to proceed with this action?',
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -55,7 +57,10 @@ class DialogsPage extends StatelessWidget {
       builder: (context) => AlertDialog(
         icon: const Icon(Icons.check_circle, color: Colors.green, size: 48),
         title: const Text('Success'),
-        content: const Text('Your action has been completed successfully.', textAlign: TextAlign.center),
+        content: const Text(
+          'Your action has been completed successfully.',
+          textAlign: TextAlign.center,
+        ),
         actions: [
           SizedBox(
             width: double.infinity,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../controllers/favourites_provider.dart';
 import '../../../products/presentation/controllers/products_provider.dart';
 import '../../../products/presentation/widgets/product_card.dart';
@@ -25,9 +26,16 @@ class FavouritesPage extends ConsumerWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.favorite_border, size: 64, color: Colors.grey),
+                  const Icon(
+                    Icons.favorite_border,
+                    size: 64,
+                    color: Colors.grey,
+                  ),
                   const SizedBox(height: 16),
-                  Text('No favourites yet.', style: Theme.of(context).textTheme.titleLarge),
+                  Text(
+                    'No favourites yet.',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                   const SizedBox(height: 8),
                   const Text('Go to the products page to add some!'),
                 ],
@@ -45,15 +53,13 @@ class FavouritesPage extends ConsumerWidget {
             ),
             itemCount: favourites.length,
             itemBuilder: (context, index) {
-              return ProductCard(
-                product: favourites[index],
-                onTap: () {},
-              );
+              return ProductCard(product: favourites[index], onTap: () {});
             },
           );
         },
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, _) => Center(child: Text('Error loading products: $error')),
+        error: (error, _) =>
+            Center(child: Text('Error loading products: $error')),
       ),
     );
   }

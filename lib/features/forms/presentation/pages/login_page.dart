@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../widgets/custom_text_field.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
       // Mock API call
       await Future.delayed(const Duration(seconds: 2));
       setState(() => _isLoading = false);
-      
+
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Login successful (Mock)')),
@@ -44,17 +45,15 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 24),
                 Text(
                   'Welcome Back',
-                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Theme.of(context).textTheme.headlineMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Please sign in to continue (No real credentials are sent)',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.grey,
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium
+                      ?.copyWith(color: Colors.grey),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 32),
@@ -103,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextButton(
                       onPressed: () {},
                       child: const Text('Forgot Password?'),
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(height: 24),
@@ -112,8 +111,12 @@ class _LoginPageState extends State<LoginPage> {
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
-                  child: _isLoading 
-                      ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  child: _isLoading
+                      ? const SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
                       : const Text('Sign In', style: TextStyle(fontSize: 16)),
                 ),
               ],

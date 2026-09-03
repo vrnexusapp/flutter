@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../../../../core/storage/shared_prefs.dart';
 
 part 'favourites_provider.g.dart';
@@ -18,13 +19,13 @@ class FavouritesNotifier extends _$FavouritesNotifier {
   void toggleFavourite(int productId) {
     final currentState = state;
     List<int> newState;
-    
+
     if (currentState.contains(productId)) {
       newState = currentState.where((id) => id != productId).toList();
     } else {
       newState = [...currentState, productId];
     }
-    
+
     state = newState;
     _save(newState);
   }
