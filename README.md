@@ -60,3 +60,7 @@ Please see `CONTRIBUTING.md` for details on our code of conduct, and the process
 Copyright (c) 2026 VRNexus Technologies
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+---
+*Created by VRNexus Technologies*
+*Contact: info@vrnexusapp.com*
